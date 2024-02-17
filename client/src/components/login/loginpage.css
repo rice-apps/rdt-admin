@@ -1,89 +1,70 @@
-/* Styles for the login form */
 body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7f7f7;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4; /* Adjusted to the surrounding color in the image */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../images/testpic.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Places the background image behind the login form */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* or a fixed width depending on your layout */
+  max-width: 1200px; /* Adjust based on your design requirements */
+  margin: auto;
+  position: relative;
+  z-index: 10; /* Ensures the login form is above the background image */
+}
+
+/* Add your .login-form-container and other styles here */
+
+/* Specific styles for the login box */
+.login-box {
+  background-color: #9c27b0; /* Purple background color */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Specific styles for the Google login button */
+.login-box .google-button {
+  background-color: #fff; /* White background for the button */
+  color: #757575; /* Gray color for the text */
+  border: none; /* No border for Google button */
+}
+
+.login-box .google-button img {
+  margin-right: 10px;
+}
+
+/* Styles for the header inside the login box */
+.login-box h2 {
+  color: #fff; /* White color for the text */
+}
+
+/* You would need to add a class or ID for the login header in your HTML */
+/* Adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+  .background-image {
+    background-size: contain;
   }
-  
-  #loginForm {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="email"],
-  input[type="password"],
-  button {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    background-color: #5c6bc0;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background-color: #3f51b5;
-  }
-  
-  .divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .divider::before,
-  .divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .divider::before {
-    margin-right: .25em;
-  }
-  
-  .divider::after {
-    margin-left: .25em;
-  }
-  
-  .forgot-password,
-  .google-login {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .forgot-password a {
-    text-decoration: none;
-    color: #5c6bc0;
-  }
-  
-  .forgot-password a:hover {
-    text-decoration: underline;
-  }
-  
+}
