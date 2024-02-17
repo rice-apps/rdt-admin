@@ -1,8 +1,11 @@
 import './App.css';
+import "./components/login/Navbar";
+import Navbar from './components/login/Navbar';
 
 function App() {
   return (
     <div className="App">
+      <Navbar name={"Quang"}/>
       <header className="App-header">
         <img src={"https://riceapps.org/static/media/logo_color_light.7d03c94d.png"} className="App-logo" alt="logo" />
         <p>
@@ -20,5 +23,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
