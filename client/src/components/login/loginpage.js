@@ -25,4 +25,20 @@ function Login() {
   );
 }
 
+// Function to create and return a new element with certain attributes and content
+function createElement(tag, attributes, textContent) {
+  var element = document.createElement(tag);
+  for (var key in attributes) {
+    element.setAttribute(key, attributes[key]);
+  }
+  if (textContent) {
+    element.textContent = textContent;
+  }
+  return element;
+}
+
+  return form;
+
+
 export default Login;
+
