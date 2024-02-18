@@ -1,24 +1,33 @@
-import React, { useState } from 'react';
-import './loginpage.css'; // Make sure to create a LoginForm.css file in the same directory
+import React from "react";
+import "./loginpage.css";
+import testPic from '../../images/testpic.png';
+import google from'../../images/google.png';
 
-const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Email:', email, 'Password:', password);
-    // Add login logic here
-  };
-
+const Login = () => {
   return (
-    <div className="login-form-container">
-      <h2>Log into Rice Dance Theatre Admin</h2>
-      <form onSubmit={handleSubmit}>
-        <button type="button" className="google-button">Log in with Google</button>
-      </form>
+    <div className="container">
+      <div className="purple-rectangle">
+        <div className="text-container">
+          <img
+            className= "image"
+            src= {testPic}
+            alt = "imagetoinsert"
+          />
+</div>
+    <div className="login-container">
+      <h1 className="title">Log in to Rice Dance Theatre</h1>
+      <button className="google-signin">
+        <img
+          className="google-icon"
+          src={google}
+          alt="Google"
+        />
+        Log in with Google
+      </button>
     </div>
+  </div>
+</div>
   );
 };
 
-export default LoginForm;
+export default Login;
