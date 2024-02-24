@@ -1,0 +1,107 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f3f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  
+  .header {
+    background-color: #a59aca;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input[type="text"],
+  .input-group input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .button-group {
+    text-align: right;
+  }
+  
+  .button-group button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .primary-button {
+    background-color: #6c63ff;
+    color: #fff;
+  }
+  
+  .secondary-button {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .redemption-code {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .redemption-code span {
+    margin-right: 10px;
+  }
+  
+  .delete-button {
+    background-color: #ff6b6b;
+    color: #fff;
+  }
+  
+  .save-button {
+    background-color: #48c78e;
+    color: #fff;
+  }
+  
+  /* You will need to add more styles and refine these to match your exact design */
+  
