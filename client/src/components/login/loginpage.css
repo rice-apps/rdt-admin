@@ -27,7 +27,9 @@
 
 .image {
   max-width: 100%;
-  max-height: 300px; /* Adjust to your preference */
+  max-height: 300px;
+  border-radius: 10px; /* Adjust the value to change the roundness of the corners */
+  border: 2px solid #000; /* Optional: You can also specify the border width and color */
   object-fit: contain; /* Keep aspect ratio */
 }
 
@@ -65,4 +67,4 @@
   
 }
 
-/* Add more styles here if needed */
+
