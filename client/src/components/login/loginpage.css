@@ -8,7 +8,7 @@
 }
 
 .purple-rectangle {
-  background-color: #551665; /* Purple rectangle color */
+  background-color: #703E8A; /* Purple rectangle color */
   padding: 1.5rem;
   flex-direction: row; /* Aligns children (image and login) in a row */
   border-radius: 10px;
