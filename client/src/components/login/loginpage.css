@@ -1,89 +1,70 @@
-/* Styles for the login form */
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7f7f7;
-  }
+/* loginpage.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e1c4ff; /* Background color */
+}
+
+.purple-rectangle {
+  background-color: #703E8A; /* Purple rectangle color */
+  padding: 1.5rem;
+  flex-direction: row; /* Aligns children (image and login) in a row */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between; /* Adjust content spacing */
+  align-items: center;
+  max-width: 70%; 
+  align-items: center;
+
+}
+
+.image-container {
+  width: 50%; /* Adjust width to your preference */
+}
+
+.image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px; /* Adjust the value to change the roundness of the corners */
+  border: 2px solid #000; /* Optional: You can also specify the border width and color */
+  object-fit: contain; /* Keep aspect ratio */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the children horizontally */
+  width: 50%; /* Adjust width to your preference */
+}
+
+.title {
+  color: white;
+  text-align: center; /* This will center-align the text of the title */
+  margin-bottom: 1rem; /* Space between title and Google sign-in */
+}
+
+.google-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 22px; /* Rounded corners */
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer; /* Hand cursor on hover */
+  border: none; /* Remove border */
+  outline: none; /* Remove focus outline */
+}
+
+.google-icon {
+  margin-right: 10px; /* Space between icon and text */
+  width: 30px; /* Decrease the width to shrink the icon */
+  height: 30px; /* Decrease the height to shrink the icon */
+  margin-right: 10px; /* Keep some space between the icon and the text */
   
-  #loginForm {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="email"],
-  input[type="password"],
-  button {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    background-color: #5c6bc0;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background-color: #3f51b5;
-  }
-  
-  .divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .divider::before,
-  .divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .divider::before {
-    margin-right: .25em;
-  }
-  
-  .divider::after {
-    margin-left: .25em;
-  }
-  
-  .forgot-password,
-  .google-login {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .forgot-password a {
-    text-decoration: none;
-    color: #5c6bc0;
-  }
-  
-  .forgot-password a:hover {
-    text-decoration: underline;
-  }
-  
+}
+
+
