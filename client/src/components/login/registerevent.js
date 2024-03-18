@@ -1,48 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./registerevent.css";
 import dayjs from 'dayjs';
-import {Card} from "antd";
+import {Card, Row, Col} from "antd";
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { Button, DatePicker, Form, Input, InputNumber, List, Tag, Modal } from 'antd';
-import { PlusOutlined, CloseOutlined } from '@ant-design/icons';
+import { Button, DatePicker, Form, Input, InputNumber, TimePicker} from 'antd';
 
 dayjs.extend(customParseFormat);
 
-const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 
 const RegisterEvent = () => {
-  const [codes, setCodes] = useState([
-    { code: 'RICESTUDENT', discount: -2 },
-    { code: 'FAMILYDISCOUNT', discount: -4 }
-  ]);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [newCode, setNewCode] = useState('');
-  const [newDiscount, setNewDiscount] = useState('');
 
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
-
-  const handleOk = () => {
-    if (newCode && newDiscount) {
-      setCodes([...codes, { code: newCode, discount: parseFloat(newDiscount) }]);
-      setNewCode('');
-      setNewDiscount('');
-    }
-    setIsModalVisible(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-
-  const deleteCode = (codeToDelete) => {
-    const newCodes = codes.filter(code => code.code !== codeToDelete);
-    setCodes(newCodes);
-  };
-
-  const onFinish = (values) => {
+    const onFinish = (values) => {
     console.log('Received values of form:', values);
     // Here we need to handle the form submission, such as sending data to a backend server.
   };
@@ -50,20 +19,17 @@ const RegisterEvent = () => {
   return (
     <div className="register-event-container">
       <Form
-        labelCol={{ span: 8 }}
+        labelCol={{ span: 5 }}
         wrapperCol={{ span: 16 }}
         layout="horizontal"
         onFinish={onFinish}
         className="form-container"
       >
         <h1 className="form-title">Register a new event</h1>
-        <Form.Item
-          label="Event name"
-          name="event_name"
-          rules={[{ required: true, message: 'Please input an event name!' }]}
-        >
-          <Input />
-        </Form.Item>
+                        <Form.Item label="Event name" name="event_name"
+                            rules={[{ required: true, message: 'Please input an event name!' }]}>
+                            <Input />
+                        </Form.Item>
 
         <Form.Item
           label="Location"
@@ -73,11 +39,40 @@ const RegisterEvent = () => {
           <Input />
         </Form.Item>
 
-        <Form.Item label="Event Start Date and Time" name="event_dates"
-        rules={[{ required: true, message: 'Please enter a Date and Time!' }]}
-        >
-          <RangePicker showTime />
-        </Form.Item>
+         {/* Row for Date Inputs */}
+         <Row gutter={16}>
+                    <Col span={12}>
+                        <Form.Item label="Start Date" name="event_start_date"
+                        rules={[{ required: true, message: 'Please select a start date!' }]}
+                        >
+                            <DatePicker />
+                        </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                        <Form.Item label="End Date" name="event_end_date"
+                        rules={[{ required: true, message: 'Please select an end date!' }]}
+                        >
+                            <DatePicker />
+                        </Form.Item>
+                    </Col>
+                </Row>
+                {/* Row for Start and End Time Inputs */}
+                <Row gutter={16}>
+                    <Col span={12}>
+                        <Form.Item label="Start Time" name="start_time"
+                        rules={[{ required: true, message: 'Please select a start time!' }]}
+                        >
+                            <TimePicker format={'HH:mm'} />
+                        </Form.Item>
+                    </Col>
+                    <Col span={12}>
+                        <Form.Item label="End Time" name="end_time"
+                        rules={[{ required: true, message: 'Please select an end time!' }]}
+                        >
+                            <TimePicker format={'HH:mm'} />
+                        </Form.Item>
+                    </Col>
+                </Row>
 
         <Form.Item label="Description" name="description">
           <TextArea rows={4} />
@@ -87,35 +82,16 @@ const RegisterEvent = () => {
           <InputNumber min={0} onChange={onChange} />
         </Form.Item>
 
-        <Form.Item label="Special redemption codes">
-          <List
-            dataSource={codes}
-            renderItem={item => (
-              <List.Item actions={[<CloseOutlined onClick={() => deleteCode(item.code)} />]}>
-                <Tag color="purple">{item.code}</Tag>
-                {item.discount}
-              </List.Item>
-            )}
-          />
-          <Button type="dashed" onClick={showModal} icon={<PlusOutlined />} block>
-            Create new code
-          </Button>
-          <Modal title="Create New Code" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-            <Input
-              addonBefore="Code"
-              value={newCode}
-              onChange={(e) => setNewCode(e.target.value)}
-              placeholder="Enter code"
-            />
-            <InputNumber
-              addonBefore="Discount"
-              value={newDiscount}
-              onChange={(value) => setNewDiscount(value)}
-              placeholder="Enter discount"
-              style={{ width: '100%', marginTop: '10px' }}
-            />
-          </Modal>
-        </Form.Item>
+         {/* Additional Pricing Inputs */}
+         <Form.Item label="Rice Student Discount" name="rice_student_discount">
+                    <InputNumber min={0} />
+                </Form.Item>
+                <Form.Item label="At-Door Price" name="at_door_price">
+                    <InputNumber min={0} />
+                </Form.Item>
+                <Form.Item label="Family Promo Code" name="family_promo_code">
+                    <Input />
+                </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="default" className="delete-button">
