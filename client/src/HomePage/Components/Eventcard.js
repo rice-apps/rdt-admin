@@ -22,7 +22,7 @@ const Eventcard = () => {
 
             <div className='buttons'>
                 <a href= "cardPage" className="card-btn"> Learn More</a>
-                <a href= "cardPage" className="card-btn"> View</a>
+                <a href= "cardPage" className="card-btn"> View Attendance</a>
             </div>
         </div>
 

@@ -1,11 +1,11 @@
 .eventcard{
-    width: 750px;
+    width: 850px;
     border-radius: 1rem;
     box-shadow: 0 px 10px 8px white;
     display: flex;
     margin:0.5rem;
     background-color: white;
-    height: 200px;
+    height: 150px;
     flex-direction: row;
     border: 2px solid purple;
     border-color: purple;
@@ -15,7 +15,7 @@
 
 .card-img{
     width: 250px;
-    height: 199px;
+    height: 149px;
     margin-left: auto;
     border-top-left-radius: .87rem;
     border-bottom-left-radius: .90rem;
@@ -45,20 +45,24 @@
     margin-top: -1rem;
 }
 
-.card-description{    }
+.card-description{    
+    margin-left: -.5rem;
+    margin-bottom: .5rem;
+    height: 100px;
+    margin-top: -.5rem;
+}
 
 
 
 .buttons{
-    background-color: rgb(167, 18, 167);
+    background-color: ;
     flex-direction: column;
     text-align: center;
     border-top-right-radius: .87rem;
     border-bottom-right-radius: .87rem;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 149x;
     display: flex;
-
 }
 
 
@@ -68,10 +72,11 @@
     border: none;
     border-radius: 5px;
     padding: 10px;
-    margin: 5px;
+    margin: 11px;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
+    height: 30px; 
 }
 
 
