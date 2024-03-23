@@ -13,9 +13,9 @@ function App() {
   return (
     
     <Layout>
-      <LoginForm/>
+      {/* <LoginForm/>
+      <RegisterEvent/> */}
     
-      <RegisterEvent/>
       <Homepage/>
       
 
