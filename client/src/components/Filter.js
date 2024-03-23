@@ -27,7 +27,7 @@ const Eventcard = () => {
 </div>
 
 <div className="filter-date">
-<label> Date </label>
+<label className= "date-label"> Date </label>
 
   <input type="date" id="fromDate" />
   <span>to</span>

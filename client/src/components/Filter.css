@@ -25,16 +25,17 @@
     }
     
     .filter-sort button {
-      background-color: #e0d7ec;
-      border: none;
-      border-radius: 20px;
-      padding: 10px 20px;
+      background-color: #d5b6ff;
+      border-radius: 2px;
+      margin: 5px;
     }
     
     .filter-date {
       display: flex;
-      justify-content: space-between;
       margin-bottom: 20px;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
     }
     
     .filter-date input {
