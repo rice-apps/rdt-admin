@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-weight: 600;
 }
@@ -20,4 +22,36 @@ body {
     border-style: solid;
     border-width: 1px;
     border-radius: 8px;
+}
+
+.user-cards {
+    display: grid;
+    
+}
+
+.entry-header {
+    display: flex;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: #F0D2FF;
+
+    margin-bottom: 1rem;
+}
+
+.card {
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+
+    grid-gap: 20px;
+    padding: 5px;
+    background-color: #F8EBFF;
 }
