@@ -7,7 +7,7 @@ const Eventcard = () => {
         <div className="eventcard">
 
             <div>
-            <img src="https://picsum.photos/200/100" alt="Event Picture" className="card-img"/>
+                <img src="https://via.placeholder.com/250" alt="event" className="card-img"/>
             </div>
 
             <div className="text">
@@ -25,8 +25,6 @@ const Eventcard = () => {
                 <a href= "cardPage" className="card-btn"> View Attendance</a>
             </div>
         </div>
-
-      
     );
 }
 export default Eventcard

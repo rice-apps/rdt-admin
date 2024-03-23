@@ -1,21 +1,23 @@
+
 .eventcard{
     width: 850px;
     border-radius: 1rem;
     box-shadow: 0 px 10px 8px white;
-    display: flex;
     margin:0.5rem;
     background-color: white;
     height: 150px;
-    flex-direction: row;
     border: 2px solid purple;
     border-color: purple;
-    justify-content: space-between;
     color: purple; 
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
 }
 
 .card-img{
-    width: 250px;
-    height: 149px;
+    width: 300px;
+    height: 146px;
     margin-left: auto;
     border-top-left-radius: .87rem;
     border-bottom-left-radius: .90rem;
@@ -53,9 +55,8 @@
 }
 
 
-
 .buttons{
-    background-color: ;
+    background-color: white;
     flex-direction: column;
     text-align: center;
     border-top-right-radius: .87rem;
@@ -71,12 +72,12 @@
     color: black;
     border: none;
     border-radius: 5px;
-    padding: 10px;
-    margin: 11px;
+    padding: 12px;
+    margin: 13px;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    height: 30px; 
+    height: 45px; 
 }
 
 
