@@ -1,12 +1,139 @@
-
-
-
-
-
-form{
-
-  font-family: 'ComicSans';
-  background-color: #F8EBFF;
+.register-event-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  background-color: #ffff; /* Light purple background */
 }
 
+.form-container {
+  width: calc(70% - 24px); /* Assuming 24px gap between form and side content */
+  background-color: #f8ebff;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(99, 3, 195, 0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  color: #4a4a4a; /* Dark gray color */
+  margin-bottom: 24px;
+}
+
+.ant-form-item-label > label {
+  color: #4a4a4a; /* Labels color */
+}
+
+.ant-form-item-control-input {
+  margin-bottom: 16px;
+}
+
+.ant-input,
+.ant-input-number,
+.ant-picker,
+.ant-input-textarea {
+  display: flex; 
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #be94dd; 
+}
+
+.ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-btn {
+  border-radius: 4px;
+}
+
+.delete-button {
+  background-color: #e0bef2; 
+  color: rgb(19, 1, 1);
+  border-color: #4A0072;
+  margin-right: 8px;
+}
+
+.save-button {
+  background-color: #68228c; 
+  color: white;
+  border-color: #68228c;
+}
+
+/* Side content styles */
+.register-event-side {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event-photo,
+.seating-chart {
+  background-color: #f8ebff;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  height: 200px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Buttons below placeholders */
+.edit-event,
+.view-attendance {
+  position: absolute;
+  bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  color: white;
+  font-weight: 500;
+}
+
+.edit-event {
+  background-color: #9254de; /* Purple color for edit button */
+  left: 16px;
+}
+
+.view-attendance {
+  background-color: #9254de; /* Purple color for view attendance button */
+  right: 16px;
+}
+
+/* Special redemption codes list styles */
+.ant-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ant-tag {
+  background-color: #fde3cf; 
+  color: #59188e; /* Dark orange text color */
+  border: none;
+  border-radius: 2px;
+}
+
+/* Adjustments for modal */
+.ant-modal-header {
+  background-color: #e0bef2;
+}
+
+.ant-modal-title {
+  color: #333;
+}
+
+.ant-modal-body {
+  padding: 16px;
+}
+
+
+/* Style for the dashed button to create new code */
+.create-code-button {
+  border-style: dashed;
+  margin-top: 16px;
+  color: #e0bef2;
+}
 
