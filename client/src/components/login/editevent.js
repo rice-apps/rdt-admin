@@ -25,7 +25,7 @@ const EditEvent = () => {
         onFinish={onFinish}
         className="form-container"
       >
-        <h1 className="form-title">Edit event</h1>
+        <h1 className="form-title">Edit Event</h1>
                         <Form.Item label="Event name" name="event_name"
                             rules={[{ required: true, message: 'Please input an event name!' }]}>
                             <Input />

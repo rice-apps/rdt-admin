@@ -6,6 +6,7 @@ import { BrowserRouter, useNavigate } from 'react-router-dom';
 import 'antd/dist/reset.css';
 import LoginForm from './components/login/loginpage'; // Adjust the path as necessary
 import RegisterEvent from './components/login/registerevent';
+import EditEvent from './components/login/editevent';
 import Layout from './components/login/Layout';
 import Homepage from './HomePage/Components/Homepage';
 function App() {
@@ -13,8 +14,9 @@ function App() {
   return (
     
     <Layout>
-      {/* <LoginForm/>
-      <RegisterEvent/> */}
+      <LoginForm/>
+      <RegisterEvent/> 
+      <EditEvent/>
     
       <Homepage/>
       
