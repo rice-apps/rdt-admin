@@ -7,13 +7,15 @@ import 'antd/dist/reset.css';
 import LoginForm from './components/login/loginpage'; // Adjust the path as necessary
 import RegisterEvent from './components/login/registerevent';
 
-
 function App() {
 
   return (
     
     <div className="App">
-      <Navbar name={"Quang"}/>
+      {
+        <RegisterEvent></RegisterEvent>
+      
+      /* <Navbar name={"Quang"}/>
       <header className="App-header">
         <img src={"https://riceapps.org/static/media/logo_color_light.7d03c94d.png"} className="App-logo" alt="logo" />
         <p>
@@ -25,9 +27,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
