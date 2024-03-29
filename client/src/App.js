@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import "./components/login/Navbar";
-import Navbar from './components/login/Navbar';
+import "./components/Navbar";
+import Navbar from './components/Navbar';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
 import 'antd/dist/reset.css';
-import LoginForm from './components/login/loginpage'; // Adjust the path as necessary
-import RegisterEvent from './components/login/registerevent';
-import EditEvent from './components/login/editevent';
-import Layout from './components/login/Layout';
-import Homepage from './HomePage/Components/Homepage';
+import LoginForm from './pages/LoginPage'; // Adjust the path as necessary
+import RegisterEvent from './pages/RegisterEventPage';
+import EditEvent from './pages/EditEventPage';
+import Layout from './components/Layout';
+import Homepage from './pages/HomePage';
 function App() {
 
   return (

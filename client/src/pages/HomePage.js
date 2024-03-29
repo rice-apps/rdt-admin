@@ -1,5 +1,5 @@
-import Eventcard from '../Components/Eventcard';
-import "./Homepage.css";
+import Eventcard from '../components/EventCard';
+import "../styles/Homepage.css";
 
 const Homepage = () => {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
-import "./loginpage.css";
-import testPic from '../../images/testpic.png';
-import google from'../../images/google.png';
+import "../styles/loginpage.css";
+import testPic from '../images/testpic.png';
+import google from'../images/google.png';
 
 const Login = () => {
   return (

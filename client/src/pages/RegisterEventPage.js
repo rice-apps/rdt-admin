@@ -1,5 +1,5 @@
 import React from 'react';
-import "./editevent.css";
+import "../styles/registerevent.css";
 import dayjs from 'dayjs';
 import {Card, Row, Col} from "antd";
 import customParseFormat from 'dayjs/plugin/customParseFormat';
@@ -9,7 +9,7 @@ dayjs.extend(customParseFormat);
 
 const { TextArea } = Input;
 
-const EditEvent = () => {
+const RegisterEvent = () => {
 
     const onFinish = (values) => {
     console.log('Received values of form:', values);
@@ -17,7 +17,7 @@ const EditEvent = () => {
   };
 
   return (
-    <div className="edit-event-container">
+    <div className="register-event-container">
       <Form
         labelCol={{ span: 5 }}
         wrapperCol={{ span: 16 }}
@@ -25,7 +25,7 @@ const EditEvent = () => {
         onFinish={onFinish}
         className="form-container"
       >
-        <h1 className="form-title">Edit Event</h1>
+        <h1 className="form-title">Register a new event</h1>
                         <Form.Item label="Event name" name="event_name"
                             rules={[{ required: true, message: 'Please input an event name!' }]}>
                             <Input />
@@ -125,7 +125,7 @@ const EditEvent = () => {
   );
 };
 
-export default EditEvent;
+export default RegisterEvent;
 
 function onChange(value) {
   console.log('changed', value);
