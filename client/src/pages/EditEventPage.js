@@ -11,7 +11,7 @@ dayjs.extend(customParseFormat);
 const { TextArea } = Input;
 
 const EditEvent = () => {
-  const URL = "YOUR_BACKEND_ENDPOINT_HERE"; 
+  const URL = "https://rdt-backend-production.up.railway.app/getallevents"; 
 
   const onFinish = (values) => {
       console.log('Received values of form:', values);
