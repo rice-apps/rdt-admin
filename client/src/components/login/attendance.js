@@ -4,9 +4,10 @@ import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import { Switch, Space, App } from 'antd';
 import { Divider } from "antd";
 import Attendanceswitch from './attendanceswitch';
+import {data} from './mock_data'
 
 const Attendance = () => {
-    console.log();
+    console.log(data);
     const navigate = useNavigate();
     return (
     <div className='main-div'>

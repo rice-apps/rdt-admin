@@ -10,21 +10,13 @@ import RegisterEvent from './pages/RegisterEventPage';
 import EditEvent from './pages/EditEventPage';
 import Layout from './components/Layout';
 import Homepage from './pages/HomePage';
+
 function App() {
 
   return (
 
     <Attendance />
-    <Layout>
-      <LoginForm/>
-      <Homepage/>
-      <RegisterEvent/> 
-      <EditEvent/>
-    
-      
 
-
-    </Layout>
     // <div className="App">
     //   {
     //     <RegisterEvent></RegisterEvent>
