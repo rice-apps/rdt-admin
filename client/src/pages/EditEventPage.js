@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios'; 
 import "../styles/editevent.css";
 import dayjs from 'dayjs';
 import {Card, Row, Col} from "antd";
@@ -10,12 +11,24 @@ dayjs.extend(customParseFormat);
 const { TextArea } = Input;
 
 const EditEvent = () => {
+  const URL = "YOUR_BACKEND_ENDPOINT_HERE"; 
 
-    const onFinish = (values) => {
-    console.log('Received values of form:', values);
-    // Here we need to handle the form submission, such as sending data to a backend server.
+  const onFinish = (values) => {
+      console.log('Received values of form:', values);
+
+      // POST request to the backend
+      axios.post(URL, values)
+      .then(response => {
+        console.log('Event created:', response.data);
+        // Optionally, navigate to another page or show success message
+      })
+      .catch(error => {
+        console.error('Failed to create event:', error);
+        // Optionally, show error message to the user
+      });
   };
 
+  // Creating the edit event container
   return (
     <div className="edit-event-container">
       <Form

@@ -1,9 +1,14 @@
 import React from 'react';
+import axios from 'axios'; 
 import "../styles/registerevent.css";
 import dayjs from 'dayjs';
 import {Card, Row, Col} from "antd";
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { Button, DatePicker, Form, Input, InputNumber, TimePicker} from 'antd';
+
+function onChange(value) {
+  console.log('changed', value);
+}
 
 dayjs.extend(customParseFormat);
 
@@ -11,10 +16,22 @@ const { TextArea } = Input;
 
 const RegisterEvent = () => {
 
+    
+    const URL = "https://rdt-backend-production.up.railway.app/getallevents"; 
     const onFinish = (values) => {
-    console.log('Received values of form:', values);
-    // Here we need to handle the form submission, such as sending data to a backend server.
-  };
+        console.log('Received values of form:', values);
+
+        // POST request to the backend
+        axios.post(URL, values)
+        .then(response => {
+          console.log('Event created:', response.data);
+          // Optionally, navigate to another page or show success message
+        })
+        .catch(error => {
+          console.error('Failed to create event:', error);
+          // Optionally, show error message to the user
+        });
+    };
 
   return (
     <div className="register-event-container">
@@ -126,8 +143,3 @@ const RegisterEvent = () => {
 };
 
 export default RegisterEvent;
-
-function onChange(value) {
-  console.log('changed', value);
-}
-
