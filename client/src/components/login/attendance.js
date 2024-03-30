@@ -1,15 +1,24 @@
 import './attendance.css'
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+import { BrowserRouter, useNavigate } from 'react-router-dom';
+import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
+import { Switch, Space, App } from 'antd';
+import { Divider } from "antd";
+import Attendanceswitch from './attendanceswitch';
 
 const Attendance = () => {
+    console.log();
+    const navigate = useNavigate();
     return (
     <div className='main-div'>
-        <div className='return-listings'> ← Return to Event Listings</div>
+        <div className='return-listings'>
+        {/* <Link to="">← Return to Event Listings</Link> */}
+        <a href="home" onClick={() => navigate("home")}>← Return to Event Listings</a>
+        </div>
         <div className="main-content">
 
             <div className="search">
                 <div className="search-text">
-                    Viewing attendance for <br />
+                    Viewing attendance for<br />
                     <strong>Event Name</strong>
 
                 </div>
@@ -19,7 +28,12 @@ const Attendance = () => {
                 </div>
             </div>
 
-            <div className='search-results'>Showing 5 results for "Smith"</div>
+            <div className="search">
+                <div className='search-results'>Showing 5 results for "Smith"</div>
+                <div className="search-criteria-switch">
+                    <Attendanceswitch />
+                </div>
+            </div>
 
             <div className="entry-header">
                 <div className="entry-header1">Name</div>
@@ -32,7 +46,12 @@ const Attendance = () => {
                 <div className="card">
                     <div className="name">My Name</div>
                     <div className="ticket-type">Family</div>
-                    <div className="payment-status">Paid</div>
+                    {/* <Divider className='divider' type='vertical'></Divider> */}
+                    <div className="payment-status">
+                        <div className="toggle">
+                            <Switch checkedChildren="Paid" unCheckedChildren="Unpaid" defaultUnchecked />
+                        </div>
+                    </div>
                     <div className="seat-number">A21</div>
                 </div>
                 <div className="card">

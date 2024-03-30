@@ -65,11 +65,20 @@ button {
 
 }
 
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
 .search-results {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: small;
+    font-size: 13px;
     font-weight: 400;
+}
+
+.search-criteria-switch {
+    margin-top: 10px;
 }
 
 .user-cards {
@@ -124,6 +133,13 @@ button {
     background-color: #F8EBFF;
 }
 
+/* .divider {
+    border: #68228C;
+    border-style: solid;
+    border-width: 1px;
+    height: 100%;
+} */
+
 .name {
     flex: 5;
 }
@@ -134,6 +150,16 @@ button {
 
 .payment-status {
     flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .seat-number {
