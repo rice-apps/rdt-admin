@@ -3,7 +3,7 @@ import "../styles/registerevent.css";
 import dayjs from 'dayjs';
 import {Card, Row, Col} from "antd";
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { Button, DatePicker, Form, Input, InputNumber, TimePicker, Upload } from 'antd';
+import { Button, DatePicker, Form, Input, InputNumber, TimePicker, Upload, message } from 'antd';
 const { Dragger } = Upload;
 
 dayjs.extend(customParseFormat);
@@ -12,11 +12,31 @@ const { TextArea } = Input;
 
 const RegisterEvent = () => {
 
-  
-
     const onFinish = (values) => {
     console.log('Received values of form:', values);
     // Here we need to handle the form submission, such as sending data to a backend server.
+  };
+
+  const eventImageUploadProps = {
+    name: 'file',
+    // action: 'https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188',
+    onChange(info) {
+      const { status } = info.file;
+      if (status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (status === 'done') {
+        message.success(`${info.file.name} file uploaded successfully.`);
+      } else if (status === 'error') {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+    onDrop(e) {
+      console.log('Dropped files', e.dataTransfer.files);
+    },
+    beforeUpload(){
+      return false
+    }
   };
 
   return (
@@ -122,23 +142,23 @@ const RegisterEvent = () => {
           </div>
 
             {/* need to change these cards to upload sections */}
-            <Card
+            {/* <Card
             hoverable
             className="event-photo"
             cover={<img alt="Event placeholder" src="path_to_your_image_placeholder" />}
           >
             <Button className="side-button edit-event">Edit event</Button>
             <Button className="side-button view-attendance">View attendance</Button>
-          </Card>
+          </Card> */}
   
-          <Card
+          {/* <Card
             hoverable
             className="seating-chart"
             cover={<img alt="Seating chart placeholder" src="path_to_your_seating_chart_placeholder" />}
           >
             <Button className="side-button edit-event">Edit event</Button>
             <Button className="side-button view-attendance">View attendance</Button>
-          </Card>
+          </Card> */}
     </div>
   </div>
   );
