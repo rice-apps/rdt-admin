@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
 import 'antd/dist/reset.css';
 import Attendance from './components/login/attendance';
-import LoginForm from './pages/LoginPage'; // Adjust the path as necessary
+import LoginPage from './pages/LoginPage'; // Adjust the path as necessary
 import RegisterEvent from './pages/RegisterEventPage';
 import EditEvent from './pages/EditEventPage';
 import Layout from './components/Layout';
@@ -14,12 +14,12 @@ function App() {
 
   return (
 
-    <Attendance />
+    // <Attendance />
     <Layout>
-      <LoginForm/>
-      <Homepage/>
-      <RegisterEvent/> 
-      <EditEvent/>
+      <LoginPage />
+      {/* <Homepage/> */}
+      {/* <RegisterEvent/>  */}
+      {/* <EditEvent/> */}
     
       
 
