@@ -3,13 +3,16 @@ import "../styles/registerevent.css";
 import dayjs from 'dayjs';
 import {Card, Row, Col} from "antd";
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { Button, DatePicker, Form, Input, InputNumber, TimePicker} from 'antd';
+import { Button, DatePicker, Form, Input, InputNumber, TimePicker, Upload } from 'antd';
+const { Dragger } = Upload;
 
 dayjs.extend(customParseFormat);
 
 const { TextArea } = Input;
 
 const RegisterEvent = () => {
+
+  
 
     const onFinish = (values) => {
     console.log('Received values of form:', values);
@@ -103,23 +106,39 @@ const RegisterEvent = () => {
         </Form.Item>
       </Form>
         <div className="register-event-side">
-        <Card
-        hoverable
-        className="event-photo"
-        cover={<img alt="Event placeholder" src="path_to_your_image_placeholder" />}
-      >
-        <Button className="side-button edit-event">Edit event</Button>
-        <Button className="side-button view-attendance">View attendance</Button>
-      </Card>
+
+          <div>
+            <Dragger {...eventImageUploadProps}>
+              {/* <p className="ant-upload-drag-icon">
+                <InboxOutlined />
+              </p> */}
+              <p className="ant-upload-text">Click or drag file to this area to upload</p>
+              <p className="ant-upload-hint">
+                Support for a single or bulk upload. Strictly prohibited from uploading company data or other
+                banned files.
+              </p>
+            </Dragger>
+
+          </div>
+
+            {/* need to change these cards to upload sections */}
+            <Card
+            hoverable
+            className="event-photo"
+            cover={<img alt="Event placeholder" src="path_to_your_image_placeholder" />}
+          >
+            <Button className="side-button edit-event">Edit event</Button>
+            <Button className="side-button view-attendance">View attendance</Button>
+          </Card>
   
-      <Card
-        hoverable
-        className="seating-chart"
-        cover={<img alt="Seating chart placeholder" src="path_to_your_seating_chart_placeholder" />}
-      >
-        <Button className="side-button edit-event">Edit event</Button>
-        <Button className="side-button view-attendance">View attendance</Button>
-      </Card>
+          <Card
+            hoverable
+            className="seating-chart"
+            cover={<img alt="Seating chart placeholder" src="path_to_your_seating_chart_placeholder" />}
+          >
+            <Button className="side-button edit-event">Edit event</Button>
+            <Button className="side-button view-attendance">View attendance</Button>
+          </Card>
     </div>
   </div>
   );
