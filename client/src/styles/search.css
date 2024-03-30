@@ -1,0 +1,27 @@
+.search-container{
+    width:975px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+.searchbox{
+    width: 850px;
+    border-color: purple;
+    border-radius: 0.25rem;
+
+}
+
+.search-button{
+    color: white;
+    background-color: purple;
+    border-radius: 5px;
+    
+}
+
+.no-results{
+    margin-bottom: 20px;
+    margin-left: 10px;
+}

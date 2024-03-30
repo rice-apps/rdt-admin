@@ -1,7 +1,97 @@
+
 .eventcard{
-    border: 1px solid black;
-    border-radius: 10px;
-    border-shadow: 5px;
+    width: 850px;
+    border-radius: 1rem;
+    box-shadow: 0 px 10px 8px gray;
+    margin:0.5rem;
+    background-color: white;
+    height: 150px;
+    border: 2px solid purple;
+    border-color: purple;
+    color: purple; 
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+}
+
+.card-img{
+    width: 280px;
+    height: 147px;
+    margin-left: auto;
+    border-top-left-radius: .87rem;
+    border-bottom-left-radius: .90rem;
+    border: .5px solid purple;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    left: auto;
+    background-color: white;
+    width: 300px;
+    height: auto;
+    margin-left: 1rem;
+}
+
+.card-description{    
+    margin-left: -.5rem;
+    margin-bottom: .5rem;
+    height: 100px;
+    margin-top: -.5rem;
+    padding: 20px;
+}
+
+.card-title{
+    color:black;
+    font-size: 20px;   
+    font-weight: bold;
+    margin-left: 0rem;
+    margin-bottom: .5rem;
+    margin-top: -1.5rem;
+}
+
+.card-date, .card-time, .card-location{    
+    margin: 4px;
+    margin-left: 0px;
+}
+
+.buttons{
+    background-color: white;
+    flex-direction: column;
+    text-align: center;
+    border-top-right-radius: .87rem;
+    border-bottom-right-radius: .87rem;
+    width: 250px;
+    height: 149x;
+    display: flex;
+}
 
 
+.card-btn1{
+    background-color: #DFBEF1;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    height: 45px; 
+}
+
+.card-btn2{
+    background-color: #F8EBFF;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    height: 45px; 
 }
