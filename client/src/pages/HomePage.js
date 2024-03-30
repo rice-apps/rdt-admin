@@ -1,14 +1,19 @@
 import Eventcard from '../components/EventCard';
+import Search from '../components/Search';
+
 import "../styles/Homepage.css";
 
 const Homepage = () => {
     return (
         
         <div>
-            <h1>current home page in progress</h1>
 
-            <div className="filter-rectangle">   
-            </div>
+            <Search></Search>
+
+            <p classname= "no-results">Showing # events</p>
+
+            <Eventcard> 
+            </Eventcard>
 
             <Eventcard> 
             </Eventcard>

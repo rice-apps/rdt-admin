@@ -15,10 +15,10 @@ function App() {
     
     <Layout>
       <LoginForm/>
+      <Homepage/>
       <RegisterEvent/> 
       <EditEvent/>
     
-      <Homepage/>
       
 
 
