@@ -10,7 +10,6 @@ const Homepage = () => {
 
             <Search></Search>
 
-            <p classname= "no-results">Showing # events</p>
 
             <Eventcard> 
             </Eventcard>
