@@ -2,12 +2,13 @@
 import "../styles/Eventcard.css"
 import axios from "axios"
 import React, { useState, useEffect } from "react";
-import {Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import RegisterEvent from '../pages/RegisterEventPage.js';
 import EditEvent from "../pages/EditEventPage.js";
 
 
-const Eventcard = (props) => {
+const EventCard = (props) => {
+    const navigate = useNavigate()
 
    return (
     <div className="eventcard">
@@ -27,7 +28,16 @@ const Eventcard = (props) => {
             </div>
 
             <div className='buttons'>
-                <a href= "cardPage" className="card-btn1"> Learn More</a>
+                {/* <a href= "cardPage" className="card-btn1"> Edit Event</a> */}
+
+               {/* <Link to="/edit" state={props}> */}
+                <div className="card-btn1"
+                    onClick={() => {
+                        navigate("/edit", {state: props})
+                    }}>
+                    Edit Event
+                </div>
+               {/* </Link> */}
 
                 <a href= "cardPage" className="card-btn2"> View Attendance</a>
             </div>
@@ -37,7 +47,7 @@ const Eventcard = (props) => {
 
         
 
-export default Eventcard
+export default EventCard
 
 
 

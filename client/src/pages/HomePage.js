@@ -32,10 +32,17 @@ const Homepage = () => {
 
             <Search></Search>
 
-
             {
                 events.map(event => 
-                    <EventCard name={event.name} date={event.date} startTime={"temp"} location={event.location}/>
+                    <EventCard name={event.name} 
+                               date={event.date} 
+                               startTime={"temp"} 
+                               location={event.location}
+                               description={event.description}
+                               prices={event.price}
+                            //    codes={event.redemptionCodes}
+
+                               />
                 )
 
             }
