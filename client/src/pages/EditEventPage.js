@@ -25,7 +25,7 @@ const EditEvent = () => {
         "location": values.location,
         "description": values.description,
         "startDate": values.startDate,
-        ""
+        // ""
       }
 
       // POST request to the backend
