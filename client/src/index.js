@@ -7,6 +7,7 @@ import Login from "./pages/LoginPage";
 import RegisterEvent from "./pages/RegisterEventPage";
 import Homepage from "./pages/HomePage";
 import EditEvent from "./pages/EditEventPage";
+import Attendance from "./components/login/attendance";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
+
     path: "/home",
     element: <Homepage />,
   },
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/edit",
     element: <EditEvent />,
+  },
+  {
+    path: "/",
+    element: <Attendance />,
   },
 ]);
 

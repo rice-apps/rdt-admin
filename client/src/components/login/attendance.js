@@ -4,10 +4,33 @@ import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import { Switch, Space, App } from 'antd';
 import { Divider } from "antd";
 import Attendanceswitch from './attendanceswitch';
+import {data} from './mock_data'
+
+import axios from "axios"
+import React, { useState, useEffect } from "react";
 
 const Attendance = () => {
-    console.log();
+    
+    const URL = "https://rdt-backend-production.up.railway.app/getusers";
     const navigate = useNavigate();
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            console.log("Making GET Request");
+            try {
+                const response = await axios.get(URL);
+                console.log(response.data);
+                setData(response.data);
+            } catch (error) {
+                console.error('Failed to fetch data: ', error);
+            }
+        }
+        fetchData()
+    },[]);
+    
+    console.log(data);
+    
     return (
     <div className='main-div'>
         <div className='return-listings'>
@@ -29,7 +52,7 @@ const Attendance = () => {
             </div>
 
             <div className="search">
-                <div className='search-results'>Showing 5 results for "Smith"</div>
+                <div className='search-results'>Showing {data.length} results for "Smith"</div>
                 <div className="search-criteria-switch">
                     <Attendanceswitch />
                 </div>
@@ -43,7 +66,9 @@ const Attendance = () => {
             </div>
 
             <div className="user-cards">
-                <div className="card">
+
+                {data.map((item) => (
+                    <div className="card">
                     <div className="name">My Name</div>
                     <div className="ticket-type">Family</div>
                     {/* <Divider className='divider' type='vertical'></Divider> */}
@@ -54,30 +79,8 @@ const Attendance = () => {
                     </div>
                     <div className="seat-number">A21</div>
                 </div>
-                <div className="card">
-                    <div className="name">My Name</div>
-                    <div className="ticket-type">Family</div>
-                    <div className="payment-status">Paid</div>
-                    <div className="seat-number">A21</div>
-                </div>
-                <div className="card">
-                    <div className="name">My Name</div>
-                    <div className="ticket-type">Family</div>
-                    <div className="payment-status">Paid</div>
-                    <div className="seat-number">A21</div>
-                </div>
-                <div className="card">
-                    <div className="name">My Name</div>
-                    <div className="ticket-type">Family</div>
-                    <div className="payment-status">Paid</div>
-                    <div className="seat-number">A21</div>
-                </div>
-                <div className="card">
-                    <div className="name">My Name</div>
-                    <div className="ticket-type">Family</div>
-                    <div className="payment-status">Paid</div>
-                    <div className="seat-number">A21</div>
-                </div>
+                ))}
+
             </div>
         </div>
     </div>

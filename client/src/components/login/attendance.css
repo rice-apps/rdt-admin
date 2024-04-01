@@ -57,6 +57,7 @@ input {
 
 button {
     border: 1px solid #68228C;
+    color: black;
     border-radius: 6px;
     font-size: 16px;
     padding: 6px;
@@ -129,7 +130,7 @@ button {
     border-radius: 8px;
 
     grid-gap: 20px;
-    padding: 5px;
+    padding: 7px;
     background-color: #F8EBFF;
 }
 
@@ -156,7 +157,7 @@ button {
 }
 
 .toggle {
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
