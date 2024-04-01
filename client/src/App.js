@@ -1,30 +1,25 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 import "./components/Navbar";
-import Navbar from './components/Navbar';
-import { BrowserRouter, useNavigate } from 'react-router-dom';
-import 'antd/dist/reset.css';
-import Attendance from './components/login/attendance';
-import LoginPage from './pages/LoginPage'; // Adjust the path as necessary
-import RegisterEvent from './pages/RegisterEventPage';
-import EditEvent from './pages/EditEventPage';
-import Layout from './components/Layout';
-import Homepage from './pages/HomePage';
+import Navbar from "./components/Navbar";
+import { BrowserRouter, useNavigate } from "react-router-dom";
+import "antd/dist/reset.css";
+import Attendance from "./components/login/attendance";
+import LoginPage from "./pages/LoginPage"; // Adjust the path as necessary
+import RegisterEvent from "./pages/RegisterEventPage";
+import EditEvent from "./pages/EditEventPage";
+import Layout from "./components/Layout";
+import Homepage from "./pages/HomePage";
 
 function App() {
-
   return (
-
-
     // <Attendance />
     <Layout>
       <LoginPage />
       {/* <Homepage/> */}
       {/* <RegisterEvent/>  */}
-      {/* <EditEvent/> */} 
-
-    // <div className="App">
-    //   {
+      {/* <EditEvent/> */}
+    </Layout>
     //     <RegisterEvent></RegisterEvent>
     //   }
     // //   /* <Navbar name={"Quang"}/>
