@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Radio, TreeSelect } from 'antd';
 
-const Attendanceswitch = () => {
+const AttendanceSwitch = () => {
   const [placement, SetPlacement] = useState('topLeft');
   const placementChange = (e) => {
     SetPlacement(e.target.value);
@@ -33,4 +33,4 @@ const Attendanceswitch = () => {
     </>
   );
 };
-export default Attendanceswitch;
+export default AttendanceSwitch;
