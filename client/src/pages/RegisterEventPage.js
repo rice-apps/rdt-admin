@@ -27,36 +27,38 @@ const RegisterEvent = () => {
 
 
     const URL = "https://rdt-backend-production.up.railway.app/"; 
-    const onFinish = (values) => {
-      let start_hour = 0
-      let am_pm = "AM"
-      if (values.start_time.$H > 12) {
-        start_hour = values.start_time.$H - 12
-        am_pm = 'PM'
-      } else {
-        start_hour = values.start_time.$H
-      }
 
-      let end_hour = 0
-      let am_pm_end = "AM"
-      if (values.end_time.$H > 12) {
-        end_hour = values.end_time.$H - 12
-        am_pm_end = 'PM'
-      } else {
-        end_hour = values.end_time.$H
+    const formatTime = (time) => {
+      let hour = 0
+      let am_pm = "AM"
+      console.log(time.$H)
+      if (time.$H > 12) {
+        hour = time.$H - 12
+        am_pm = 'PM'
+      } else if (time.$H == 0) {
+        hour = 12
+        am_pm = 'AM'
       }
+      else {
+        hour = time.$H
+      }
+      let formatedTime = hour + ':' + (time.$m < 10 ? '0' : '') + time.$m + " " + am_pm
+      console.log(formatedTime)
+      return formatedTime
+    }
+    const onFinish = (values) => {
 
       let newEvent = {
         "name": values.event_name,
         "location": values.location,
-        "startDate": values.event_date,
+        "date": values.event_date,
         "basePrice": values.pricing,
         "studentDiscount": values.rice_student_discount,
         "atDoorPrice": values.at_door_price,
         "description": values.description,
         "redemptionCode": values.family_promo_code,
-        "startTime": start_hour + ':' + (values.start_time.$m < 10 ? '0' : '') +  values.start_time.$m + " " + am_pm,
-        "endTime": end_hour + ':' + (values.end_time.$m < 10 ? '0' : '') + values.end_time.$m + " " + am_pm_end
+        "startTime": formatTime(values.start_time),
+        "endTime": formatTime(values.end_time)
 
         // TODO: quang
         // "coverPhoto": ,
