@@ -2,12 +2,17 @@ import { useState, useEffect } from 'react'
 import EventCard from '../components/EventCard';
 import Search from '../components/Search';
 import Navbar from "../components/Navbar"
+import { message } from 'antd'
+
+import { useLocation } from 'react-router-dom';
 
 import axios from 'axios'
 
 import "../styles/Homepage.css";
 
 const Homepage = () => {
+    const [messageApi, contextHolder] = message.useMessage();
+    const { state } = useLocation();
     const [events, setEvents] = useState([])
     const URL = "https://rdt-backend-production.up.railway.app/";
     useEffect(() => {
@@ -17,6 +22,15 @@ const Homepage = () => {
                 setEvents(response.data)
 
                 // Optionally, navigate to another page or show success message
+                // console.log(state)
+                // if (state.newEvent) {
+                //     messageApi.open({
+                //         type: 'success',
+                //         content: 'Created new event, ' + state.newEvent + "!",
+                //     });
+                //     state = {}
+                // }
+
             })
             .catch(error => {
                 console.error('Failed to get events:', error);
@@ -25,9 +39,11 @@ const Homepage = () => {
 
 
     }, [])
+
     return (
         
         <div>
+            {contextHolder}
             <Navbar allowCreateEvent ={true}/>
 
             <Search></Search>

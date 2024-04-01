@@ -3,7 +3,7 @@ import '../styles/Navbar.css'
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = (props) => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   
   // TODO: write function for button onclick- navigate to new-event page
   
