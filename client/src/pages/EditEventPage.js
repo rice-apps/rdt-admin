@@ -48,11 +48,8 @@ const EditEvent = () => {
 
   const onFinish = (values) => {
       // console.log('Received values of form:', values);
-      console.log('received', values)
-      console.log(Object.entries(values))
 
       let name = currEvent.name
-
 
       let update = {}
       Object.entries(values).forEach(([key, value]) => {
@@ -62,10 +59,6 @@ const EditEvent = () => {
           update[key] = formattedValue
         }
       });
-    // console.log('to update: ', valuesToUpdate)
-    console.log('updat with: ', update)
-
-
       // POST request to the backend
     if (update) {
       axios.put(URL + "updateevent", update, { params: { name } })
