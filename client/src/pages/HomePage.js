@@ -52,12 +52,17 @@ const Homepage = () => {
                 events.map(event => 
                     <EventCard name={event.name} 
                                date={event.date} 
-                               startTime={"temp"} 
+                               startTime={event.startTime}
+                               endTime={event.endTime} 
                                location={event.location}
                                description={event.description}
-                               prices={event.price}
-                            //    codes={event.redemptionCodes}
-
+                               basePrice={event.basePrice}
+                               studentDiscount={event.studentDiscount}
+                               atDoorPrice={event.atDoorPrice}
+                               redemptionCode={event.redemptionCode}
+                               coverPhoto={event.coverPhoto}
+                               seatingPhoto={event.seatingPhoto}
+                               availableSeats={event.availableSeats}
                                />
                 )
 
