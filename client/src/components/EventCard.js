@@ -38,8 +38,12 @@ const EventCard = (props) => {
                     Edit Event
                 </div>
                {/* </Link> */}
-
-                <a href= "cardPage" className="card-btn2"> View Attendance</a>
+               <div className="card-btn2"
+                   onClick={() => {
+                       navigate("/attendance", { state: props })
+                   }}>
+                   View Attendance
+               </div>
             </div>
         </div>
    );
