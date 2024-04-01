@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import "../styles/registerevent.css";
 import dayjs from 'dayjs';
-import {Card, Row, Col} from "antd";
+import { Card, Row, Col } from "antd";
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { Button, DatePicker, Form, Input, InputNumber, TimePicker, Upload, message } from 'antd';
 import Navbar from "../components/Navbar"
+import { useNavigate } from 'react-router-dom';
 const { Dragger } = Upload;
 
 function onChange(value) {
@@ -17,26 +18,73 @@ dayjs.extend(customParseFormat);
 const { TextArea } = Input;
 
 const RegisterEvent = () => {
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const navigate = useNavigate()
 
   const [eventCoverFile, setEventCoverFile] = useState(null)
   const [seatingChartFile, setSeatingChartFile] = useState(null)
 
 
-
-
     const URL = "https://rdt-backend-production.up.railway.app/"; 
     const onFinish = (values) => {
-        console.log('Received values of form:', values);
+      let start_hour = 0
+      let am_pm = "AM"
+      if (values.start_time.$H > 12) {
+        start_hour = values.start_time.$H - 12
+        am_pm = 'PM'
+      } else {
+        start_hour = values.start_time.$H
+      }
+
+      let end_hour = 0
+      let am_pm_end = "AM"
+      if (values.end_time.$H > 12) {
+        end_hour = values.end_time.$H - 12
+        am_pm_end = 'PM'
+      } else {
+        end_hour = values.end_time.$H
+      }
+
+      let newEvent = {
+        "name": values.event_name,
+        "location": values.location,
+        "startDate": values.event_date,
+        "basePrice": values.pricing,
+        "studentDiscount": values.rice_student_discount,
+        "atDoorPrice": values.at_door_price,
+        "description": values.description,
+        "redemptionCode": values.family_promo_code,
+        "startTime": start_hour + ':' + (values.start_time.$m < 10 ? '0' : '') +  values.start_time.$m + " " + am_pm,
+        "endTime": end_hour + ':' + (values.end_time.$m < 10 ? '0' : '') + values.end_time.$m + " " + am_pm_end
+
+        // TODO: quang
+        // "coverPhoto": ,
+        // "seatingPhoto": ,
+        // "availableSeats": ,
+      }
+      console.log(newEvent)
 
         // POST request to the backend
-        axios.post(URL, values)
+        axios.post(URL + "addevent", newEvent)
         .then(response => {
           console.log('Event created:', response.data);
           // Optionally, navigate to another page or show success message
+          navigate('/home', { state: { newEvent: values.event_name}})
+          // messageApi.open({
+          //   type: 'success',
+          //   content: 'Created new event, ' + values.event_name + "!",
+          // });
+
+
         })
         .catch(error => {
           console.error('Failed to create event:', error);
           // Optionally, show error message to the user
+          messageApi.open({
+            type: 'error',
+            content: 'Unable to create new event',
+          });
         });
     };
 
@@ -65,6 +113,7 @@ const RegisterEvent = () => {
 
   return (
     <div>
+      {contextHolder}
       <Navbar allowCreateEvent={false} />
       <div className="register-event-container">
         <Form
@@ -91,19 +140,21 @@ const RegisterEvent = () => {
           {/* Row for Date Inputs */}
           <Row gutter={16}>
             <Col span={12}>
-              <Form.Item label="Start Date" name="event_start_date"
+              <Form.Item label="Date" name="event_date"
                 rules={[{ required: true, message: 'Please select a start date!' }]}
               >
-                <DatePicker />
+                {/* <DatePicker /> */}
+                <Input placeholder="MM/DD/YYYY"/>
               </Form.Item>
             </Col>
-            <Col span={12}>
+            {/* <Col span={12}>
               <Form.Item label="End Date" name="event_end_date"
                 rules={[{ required: true, message: 'Please select an end date!' }]}
               >
-                <DatePicker />
+                {/* <DatePicker /> */}
+                {/* <Input placeholder="MM/DD/YYYY" />
               </Form.Item>
-            </Col>
+            </Col> */}
           </Row>
           {/* Row for Start and End Time Inputs */}
           <Row gutter={16}>
@@ -111,14 +162,14 @@ const RegisterEvent = () => {
               <Form.Item label="Start Time" name="start_time"
                 rules={[{ required: true, message: 'Please select a start time!' }]}
               >
-                <TimePicker format={'HH:mm'} />
+                <TimePicker use12Hours={true} format={'h:mm A'} />
               </Form.Item>
             </Col>
             <Col span={12}>
               <Form.Item label="End Time" name="end_time"
                 rules={[{ required: true, message: 'Please select an end time!' }]}
               >
-                <TimePicker format={'HH:mm'} />
+                <TimePicker use12Hours={true} format={'h:mm A'} />
               </Form.Item>
             </Col>
           </Row>
@@ -143,9 +194,9 @@ const RegisterEvent = () => {
           </Form.Item>
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="default" className="delete-button">
+            {/* <Button type="default" className="delete-button">
               Delete event
-            </Button>
+            </Button> */}
             <Button type="primary" htmlType="submit" className="save-button">
               Save and publish
             </Button>
