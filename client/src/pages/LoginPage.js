@@ -14,7 +14,7 @@ const Login = () => {
           <h1 className="title">Log in to Rice Dance Theatre</h1>
           <a
             style={{ textDecoration: "none", color: "black" }}
-            href="https://rdt-backend-develop.up.railway.app/auth/google?app=admin"
+            href="https://rdt-backend-production.up.railway.app/auth/google?app=admin"
           >
             <button className="google-signin">
               <img className="google-icon" src={google} alt="Google" />
