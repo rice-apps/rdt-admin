@@ -22,50 +22,52 @@ const Homepage = () => {
         console.log("Events received:", response.data);
         setEvents(response.data);
 
-        // Optionally, navigate to another page or show success message
-        // console.log(state)
-        // if (state.newEvent) {
-        //     messageApi.open({
-        //         type: 'success',
-        //         content: 'Created new event, ' + state.newEvent + "!",
-        //     });
-        //     state = {}
-        // }
-      })
-      .catch((error) => {
-        console.error("Failed to get events:", error);
-        // Optionally, show error message to the user
-      });
-  }, []);
-
-  return (
-    <div>
-      {contextHolder}
-      <Navbar allowCreateEvent={true} />
+            })
+            .catch(error => {
+                console.error('Failed to get events:', error);
+                // Optionally, show error message to the user
+            });
 
       <Search></Search>
 
-      {events.map((event) => (
-        <EventCard
-          key={event._id}
-          id={event._id}
-          name={event.name}
-          date={event.date}
-          startTime={event.startTime}
-          endTime={event.endTime}
-          location={event.location}
-          description={event.description}
-          basePrice={event.basePrice}
-          studentDiscount={event.studentDiscount}
-          atDoorPrice={event.atDoorPrice}
-          redemptionCode={event.redemptionCode}
-          coverPhoto={event.coverPhoto}
-          seatingPhoto={event.seatingPhoto}
-          availableSeats={event.availableSeats}
-        />
-      ))}
-    </div>
-  );
-};
+    }, [])
 
-export default Homepage;
+    return (
+        
+        <div>
+            {contextHolder}
+            <Navbar allowCreateEvent ={true}/>
+
+            <Search></Search>
+
+            {
+                events.map(event => 
+                    <EventCard name={event.name} 
+                               date={event.date} 
+                               startTime={event.startTime}
+                               endTime={event.endTime} 
+                               location={event.location}
+                               description={event.description}
+                               basePrice={event.basePrice}
+                               studentDiscount={event.studentDiscount}
+                               atDoorPrice={event.atDoorPrice}
+                               redemptionCode={event.redemptionCode}
+                               coverPhoto={event.coverPhoto}
+                               seatingPhoto={event.seatingPhoto}
+                               availableSeats={event.availableSeats}
+                               tickets={event.tickets}
+                               />
+                )
+
+            }
+
+            
+        </div>
+
+
+
+    );
+}
+
+
+export default Homepage

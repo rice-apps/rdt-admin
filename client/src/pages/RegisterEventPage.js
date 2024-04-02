@@ -198,7 +198,8 @@ const RegisterEvent = () => {
     setSelectedFile(event.target.files[0]);
   };
 
-  const URL = "https://rdt-backend-production.up.railway.app/";
+    const URL = "https://rdt-backend-production.up.railway.app/"; 
+    // const URL = 'http://localhost:3000/'
 
   const formatTime = (time) => {
     let hour = 0;
@@ -220,44 +221,46 @@ const RegisterEvent = () => {
   };
   const onFinish = (values) => {
     let newEvent = {
-      name: values.event_name,
-      location: values.location,
-      date: values.event_date,
-      basePrice: values.pricing,
-      studentDiscount: values.rice_student_discount,
-      atDoorPrice: values.at_door_price,
-      description: values.description,
-      redemptionCode: values.family_promo_code,
-      startTime: formatTime(values.start_time),
-      endTime: formatTime(values.end_time),
+      "name": values.event_name,
+      "location": values.location,
+      "date": values.event_date,
+      "basePrice": values.pricing,
+      "studentDiscount": values.rice_student_discount,
+      "atDoorPrice": values.at_door_price,
+      "description": values.description,
+      "redemptionCode": values.family_promo_code,
+      "startTime": formatTime(values.start_time),
+      "endTime": formatTime(values.end_time),
+      "coverPhoto": coverImageURL,
+      "seatingPhoto": seatImageURL,
+      "availableSeats": seatOptions,
+        // "availableSeats": ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10'],
+      }
+      console.log(newEvent)
 
-      // TODO: quang
-      coverPhoto: coverImageURL,
-      seatingPhoto: seatImageURL,
-      availableSeats: seatOptions,
-    };
-    console.log(newEvent);
-
-    // POST request to the backend
-    axios
-      .post(URL + "addevent", newEvent)
-      .then((response) => {
-        console.log("Event created:", response.data);
+        // POST request to the backend
+      axios.post(URL + "addevent", newEvent)
+      .then(response => {
+        console.log('Event created:', response.data);
         // Optionally, navigate to another page or show success message
-        navigate("/home", { state: { newEvent: values.event_name } });
+        navigate('/home', { state: { newEvent: values.event_name}})
         // messageApi.open({
         //   type: 'success',
         //   content: 'Created new event, ' + values.event_name + "!",
         // });
+
+
       })
-      .catch((error) => {
-        console.error("Failed to create event:", error);
+      .catch(error => {
+        console.error('Failed to create event:', error);
         // Optionally, show error message to the user
         messageApi.open({
-          type: "error",
-          content: "Unable to create new event",
+          type: 'error',
+          content: 'Unable to create new event',
         });
       });
+      
+    
   };
 
   const propsCover = {
