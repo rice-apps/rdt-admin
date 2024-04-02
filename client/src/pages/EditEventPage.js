@@ -18,8 +18,8 @@ const EditEvent = () => {
   const navigate = useNavigate()
   // console.log(currEvent)
 
-  const URL = "https://rdt-backend-production.up.railway.app/"; 
-  // const URL = "http://localhost:3000/"; 
+  // const URL = "https://rdt-backend-production.up.railway.app/"; 
+  const URL = "http://localhost:3000/"; 
 
 
   useEffect(() => {

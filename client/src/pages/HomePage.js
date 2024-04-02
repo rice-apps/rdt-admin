@@ -21,16 +21,6 @@ const Homepage = () => {
                 console.log('Events received:', response.data);
                 setEvents(response.data)
 
-                // Optionally, navigate to another page or show success message
-                // console.log(state)
-                // if (state.newEvent) {
-                //     messageApi.open({
-                //         type: 'success',
-                //         content: 'Created new event, ' + state.newEvent + "!",
-                //     });
-                //     state = {}
-                // }
-
             })
             .catch(error => {
                 console.error('Failed to get events:', error);
@@ -63,6 +53,7 @@ const Homepage = () => {
                                coverPhoto={event.coverPhoto}
                                seatingPhoto={event.seatingPhoto}
                                availableSeats={event.availableSeats}
+                               tickets={event.tickets}
                                />
                 )
 

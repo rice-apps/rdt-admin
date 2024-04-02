@@ -27,6 +27,7 @@ const RegisterEvent = () => {
 
 
     const URL = "https://rdt-backend-production.up.railway.app/"; 
+    // const URL = 'http://localhost:3000/'
 
     const formatTime = (time) => {
       let hour = 0
@@ -58,12 +59,12 @@ const RegisterEvent = () => {
         "description": values.description,
         "redemptionCode": values.family_promo_code,
         "startTime": formatTime(values.start_time),
-        "endTime": formatTime(values.end_time)
+        "endTime": formatTime(values.end_time),
 
         // TODO: quang
         // "coverPhoto": ,
         // "seatingPhoto": ,
-        // "availableSeats": ,
+        "availableSeats": ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10'],
       }
       console.log(newEvent)
 
