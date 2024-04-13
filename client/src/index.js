@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     element: <EditEvent />,
   },
   {
-    path: "/",
+    path: "/attendance",
     element: <Attendance />,
   },
 ]);
